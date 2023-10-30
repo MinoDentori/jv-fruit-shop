@@ -15,7 +15,7 @@ public class Main {
         operationOperationHandlerMap.put(Operation.PURCHASE, new PurchaseOperationHandler());
         operationOperationHandlerMap.put(Operation.RETURN, new ReturnOperationHandler());
         operationStrategy = new OperationStrategyImpl(operationOperationHandlerMap);
-        List<FruitTransaction> listOfTransactions = fileServiceCsv.read("src/test.csv");
+        List<FruitTransaction> listOfTransactions = fileServiceCsv.read("test.csv");
         Map<String, Integer> map = new HashMap<>();
         for (FruitTransaction transaction : listOfTransactions) {
             OperationHandler operationHandler = operationStrategy.get(transaction.operation());
